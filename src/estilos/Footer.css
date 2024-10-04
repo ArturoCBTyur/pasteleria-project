@@ -1,4 +1,4 @@
-/* Mantén el box-sizing */
+
 * {
   
   box-sizing: border-box;
@@ -20,8 +20,8 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* Limitar el ancho */
-  flex-wrap: wrap; /* Para que se ajuste en pantallas más pequeñas */
+  max-width: 1200px; 
+  flex-wrap: wrap; 
 }
 
 .contendor-logo {
@@ -35,12 +35,12 @@
   width: 150px;
 }
 
-/* Alinea las secciones horizontalmente */
+
 .caja-menu {
   display: flex;
-  justify-content: space-between; /* Distribuye el espacio uniformemente */
+  justify-content: space-between; 
   flex-grow: 1;
-  max-width: 800px; /* Tamaño máximo para las columnas del menú */
+  max-width: 800px; 
 }
 
 .bloque-menu {

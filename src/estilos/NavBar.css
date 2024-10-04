@@ -41,9 +41,9 @@
 }
 
 .buscador button img {
-  height: 20px; /* Ajusta el tamaño de la lupa */
-  width: 20px;  /* Añade un ancho para mantener las proporciones */
-  display: block; /* Asegura que la imagen no salga del botón */
+  height: 20px;
+  width: 20px; 
+  display: block; 
 }
 
 .buscador button:hover {
@@ -53,8 +53,8 @@
 .menu-opciones {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Mueve el menú hacia el extremo derecho */
-  flex-grow: 1; /* Hace que el menú ocupe el espacio restante entre el logo y el carrito */
+  justify-content: flex-end; 
+  flex-grow: 1; 
 }
 
 .menu-opciones ul {
@@ -65,7 +65,7 @@
 }
 
 .menu-opciones ul li {
-  margin-right: 30px; /* Ajusta el espacio entre los elementos del menú */
+  margin-right: 30px; 
 }
 
 .menu-opciones ul li a {
@@ -83,7 +83,7 @@
 .carrito {
   display: flex;
   align-items: center;
-  margin-left: 20px; /* Ajusta el espaciado del carrito */
+  margin-left: 20px; 
 }
 
 .carrito img {

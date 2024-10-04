@@ -24,30 +24,30 @@
     transition: transform 0.5s ease;
   }
 
-  
+
   .prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5); /* Hacemos que el fondo sea semitransparente */
+    background-color: rgba(0, 0, 0, 0.5); 
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
     font-size: 24px;
     border-radius: 50%;
-    z-index: 10; /* Aseguramos que estén por encima de otros elementos */
+    z-index: 10; 
   }
   
   .prev {
-    left: 20px; /* Ajusta la posición del botón anterior */
+    left: 20px; 
   }
   
   .next {
-    right: 20px; /* Ajusta la posición del botón siguiente */
+    right: 20px;
   }
   
   .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Cambia el fondo al hacer hover */
+    background-color: rgba(0, 0, 0, 0.8); 
   }
   
