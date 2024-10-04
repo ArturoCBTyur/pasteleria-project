@@ -1,0 +1,93 @@
+.barra-navegacion {
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.barra-navegacion:hover {
+  background-color: #f8f8f8;
+}
+
+.logo-small img {
+  height: 80px;
+  margin-right: 20px;
+}
+
+.buscador input {
+  width: 280px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.buscador button {
+  background-color: #ffcc00;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buscador button img {
+  height: 20px; /* Ajusta el tamaño de la lupa */
+  width: 20px;  /* Añade un ancho para mantener las proporciones */
+  display: block; /* Asegura que la imagen no salga del botón */
+}
+
+.buscador button:hover {
+  background-color: #e6b800;
+}
+
+.menu-opciones {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Mueve el menú hacia el extremo derecho */
+  flex-grow: 1; /* Hace que el menú ocupe el espacio restante entre el logo y el carrito */
+}
+
+.menu-opciones ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-opciones ul li {
+  margin-right: 30px; /* Ajusta el espacio entre los elementos del menú */
+}
+
+.menu-opciones ul li a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.menu-opciones ul li a:hover {
+  color: #ffcc00;
+  transition: color 0.3s ease-in-out;
+}
+
+.carrito {
+  display: flex;
+  align-items: center;
+  margin-left: 20px; /* Ajusta el espaciado del carrito */
+}
+
+.carrito img {
+  height: 35px;
+  width: auto;
+  cursor: pointer;
+}

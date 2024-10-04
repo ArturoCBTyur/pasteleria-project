@@ -1,0 +1,126 @@
+/* Mantén el box-sizing */
+* {
+  
+  box-sizing: border-box;
+}
+
+.contenedor-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 270px;
+  margin: 0px;
+  background-color: white;
+}
+
+.caja-lista-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Limitar el ancho */
+  flex-wrap: wrap; /* Para que se ajuste en pantallas más pequeñas */
+}
+
+.contendor-logo {
+  flex: 1;
+  text-align: center;
+  margin-right: 45px;
+}
+
+.logop {
+  height: 150px;
+  width: 150px;
+}
+
+/* Alinea las secciones horizontalmente */
+.caja-menu {
+  display: flex;
+  justify-content: space-between; /* Distribuye el espacio uniformemente */
+  flex-grow: 1;
+  max-width: 800px; /* Tamaño máximo para las columnas del menú */
+}
+
+.bloque-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 40px;
+}
+
+.caja-menu ul {
+  list-style-type: none;
+  padding: 0;
+  color: black;
+  text-align: left;
+}
+
+#titulo-enlace {
+  margin-bottom: 0;
+  color: black;
+  text-align: center;
+
+}
+
+.caja-menu li a {
+  color: black;
+  display: block;
+  text-decoration: none;
+}
+
+.caja-menu li a:hover {
+  cursor: pointer;
+  color: darkgray;
+}
+
+.caja-menu li {
+  margin: 5px 0;
+}
+
+.contenedor-redes {
+  flex: 1;
+  text-align: center;
+}
+
+.contenedor-redes .red:hover {
+  cursor: pointer;
+}
+
+#titulo-redes {
+  margin-bottom: 0;
+  color: black;
+}
+
+.redes-horizontales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.redes-horizontales figure {
+  text-align: center;
+  margin: 10px;
+}
+
+.red {
+  max-width: 40px;
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption {
+  color: black;
+}
+
+figcaption:hover {
+  cursor: pointer;
+  color: darkgray;
+}
+
+.copyright {
+  margin-top: 20px;
+  color: grey;
+  text-align: center;
+}

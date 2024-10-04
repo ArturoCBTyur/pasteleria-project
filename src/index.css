@@ -1,0 +1,12 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Establece la fuente global */
+    height: 100%; /* Asegura que el body ocupe el 100% de la altura */
+}
+
+
+:root{
+    background-color: pink;
+}
+
