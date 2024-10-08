@@ -11,7 +11,7 @@ import '../estilos/Article.css';
 
 function Article() {
     const [mensaje, setMensaje] = useState(''); 
-    const [visible, setVisible] = useState(false); // Estado para controlar visibilidad
+    const [visible, setVisible] = useState(false); 
 
     const tortas = [
         { title: 'Torta de Chocolate', description: 'Chocolate, ganache suave.', image: torta1 },
@@ -24,12 +24,12 @@ function Article() {
         { title: 'Torta Selva Negra', description: 'Chocolate, cerezas, crema.', image: torta8 },
     ];
 
-    // Mostrar mensaje temporalmente
+    
     const mostrarMensaje = (mensaje) => {
         setMensaje(mensaje);
-        setVisible(true); // Hacer visible el mensaje
+        setVisible(true); 
         setTimeout(() => {
-            setVisible(false); // Ocultar después de 3 segundos
+            setVisible(false); 
         }, 3000);
     };
 
@@ -39,7 +39,7 @@ function Article() {
                 <TortaCard key={index} torta={torta} mostrarMensaje={mostrarMensaje} />
             ))}
 
-            {/* Cuadro emergente */}
+         
             {visible && (
                 <div className="mensaje-emergente">
                     {mensaje}
