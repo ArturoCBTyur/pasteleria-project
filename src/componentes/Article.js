@@ -9,47 +9,32 @@ import torta7 from '../img/tortaN7.jpg';
 import torta8 from '../img/tortaN8.jpg';
 import '../estilos/Article.css';
 
-function Article() {
-    const [mensaje, setMensaje] = useState(''); 
-    const [visible, setVisible] = useState(false); 
-
+function Article({ agregarAlCarrito }) {
     const tortas = [
-        { title: 'Torta de Chocolate', description: 'Chocolate, ganache suave.', image: torta1 },
-        { title: 'Torta Red Velvet', description: 'Color rojo, queso crema.', image: torta2 },
-        { title: 'Torta de Zanahoria', description: 'Zanahoria, nueces, crema.', image: torta3 },
-        { title: 'Torta de Limon', description: 'Fresca, glaseado de limón.', image: torta4 },
-        { title: 'Torta de Almendras', description: 'Almendras, suave y ligera.', image: torta5 },
-        { title: 'Torta de Coco', description: 'Coco, frosting, coco rallado.', image: torta6 },
-        { title: 'Torta de Frutas', description: 'Frutas confitadas, almíbar.', image: torta7 },
-        { title: 'Torta Selva Negra', description: 'Chocolate, cerezas, crema.', image: torta8 },
+        { title: 'Torta de Chocolate', description: 'Chocolate, ganache suave.', price: 25, image: torta1 },
+        { title: 'Torta Red Velvet', description: 'Color rojo, queso crema.', price: 30, image: torta2 },
+        { title: 'Torta de Zanahoria', description: 'Zanahoria, nueces, crema.', price: 28, image: torta3 },
+        { title: 'Torta de Limón', description: 'Fresca, glaseado de limón.', price: 22, image: torta4 },
+        { title: 'Torta de Almendras', description: 'Almendras, suave y ligera.', price: 35, image: torta5 },
+        { title: 'Torta de Coco', description: 'Coco, frosting, coco rallado.', price: 27, image: torta6 },
+        { title: 'Torta de Frutas', description: 'Frutas confitadas, almíbar.', price: 40, image: torta7 },
+        { title: 'Torta Selva Negra', description: 'Chocolate, cerezas, crema.', price: 38, image: torta8 },
     ];
-
-    
-    const mostrarMensaje = (mensaje) => {
-        setMensaje(mensaje);
-        setVisible(true); 
-        setTimeout(() => {
-            setVisible(false); 
-        }, 3000);
-    };
 
     return (
         <div className="grid-contenedor">
             {tortas.map((torta, index) => (
-                <TortaCard key={index} torta={torta} mostrarMensaje={mostrarMensaje} />
+                <TortaCard 
+                    key={index} 
+                    torta={torta} 
+                    agregarAlCarrito={agregarAlCarrito}
+                />
             ))}
-
-         
-            {visible && (
-                <div className="mensaje-emergente">
-                    {mensaje}
-                </div>
-            )}
         </div>
     );
 }
 
-function TortaCard({ torta, mostrarMensaje }) {
+function TortaCard({ torta, agregarAlCarrito }) {
     const [cantidad, setCantidad] = useState(0);
 
     const incrementar = () => setCantidad(cantidad + 1);
@@ -59,9 +44,9 @@ function TortaCard({ torta, mostrarMensaje }) {
 
     const agregarProducto = () => {
         if (cantidad > 0) {
-            mostrarMensaje(`Producto agregado: ${torta.title}. Cantidad: ${cantidad}`);
+            agregarAlCarrito(torta, cantidad);
         } else {
-            mostrarMensaje("No hay productos que agregar");
+            agregarAlCarrito(torta, 0);
         }
     };
 
@@ -70,7 +55,8 @@ function TortaCard({ torta, mostrarMensaje }) {
             <img src={torta.image} alt={torta.title} className="card-image" />
             <h3>{torta.title}</h3>
             <p>{torta.description}</p>
-
+            <p><strong>Precio: S/.{torta.price}</strong></p>
+            
             <div className="contador">
                 <button onClick={decrementar} className="contador-btn">-</button>
                 <input type="text" value={cantidad} readOnly className="contador-input" />

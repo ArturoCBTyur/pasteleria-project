@@ -46,18 +46,19 @@
 }
 .mensaje-emergente {
     position: fixed;
-    top: 50%;
+    bottom: 20px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffcc00;
+    transform: translateX(-50%);
+    background-color: #4caf50;
     color: white;
-    padding: 40px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 5px;
     z-index: 1000;
-    font-size: 18px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: center;
-    opacity:0.9;
+    transition: opacity 0.5s ease;
+}
+
+.mensaje-emergente.error {
+    background-color: rgba(255, 0, 0, 0.8); 
 }
 
 .grid-contenedor {
@@ -65,7 +66,8 @@
     z-index: 0;
 }
 .contador-btn {
-    padding: 5px 10px;
+    margin: 0px 4px;
+    padding: 3px 10px;
     border: none;
     color: white;
     background-color: #ffcc00; 
@@ -74,13 +76,16 @@
     border-radius: 4px;
     transition: background-color 0.3s ease; 
 }
+
 .agregar-btn{
+    margin: 5px 0px;
     background-color: #ffcc00;
     height: 35px;
-    width: 70px;
+    width: 80px;
     font-size: medium;
 }
 
 .agregar-btn:hover{
-    background-color: aliceblue;
+    background-color:#edbf07;
 }
+

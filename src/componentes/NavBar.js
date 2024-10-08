@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import '../estilos/NavBar.css';
 import lupa from '../img/lupa.png';
 import logo from '../img/logo.png';
-import carrito from '../img/carrito.png';
+import carritoCom from '../img/carrito.png';
 
-const NavBar = () => {
+const NavBar = ({ carrito, setCarrito }) => {
+  const [carritoAbierto, setCarritoAbierto] = useState(false);
+
+  const manejarClickCarrito = () => {
+    setCarritoAbierto(!carritoAbierto);
+  };
+
+  const quitarProducto = (titulo) => {
+    const nuevoCarrito = carrito.filter(item => item.title !== titulo);
+    setCarrito(nuevoCarrito);
+  };
+
+  const calcularTotal = () => {
+    return carrito.reduce((total, item) => total + (item.price * item.cantidad), 0);
+  };
+
   return (
     <header>
       <div className="barra-navegacion">
@@ -29,11 +44,34 @@ const NavBar = () => {
               <a href="#">Tortas</a>
             </li>
           </ul>
-          <div className="carrito">
-            <img src={carrito} alt="Carrito" />
+          <div className="carrito" onClick={manejarClickCarrito}>
+            <img src={carritoCom} alt="Carrito" />
           </div>
         </div>
       </div>
+
+      {carritoAbierto && (
+        <div className="carrito-desplegable">
+          {carrito.length === 0 ? (
+            <p>El carrito está vacío</p>
+          ) : (
+            <div>
+              <ul>
+                {carrito.map((item, index) => (
+                  <li key={index}>
+                    {item.title} - Cantidad: {item.cantidad} - Precio: S/.{item.price * item.cantidad} 
+                    <button onClick={() => quitarProducto(item.title)}>Quitar</button>
+                  </li>
+                ))}
+              </ul>
+              <div className="botones-carrito">
+                <p><strong>Total: S/.{calcularTotal()}</strong></p> 
+                <button className="confirmar-btn">Confirmar</button>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
     </header>
   );
 };
