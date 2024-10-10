@@ -4,7 +4,7 @@ import '../estilos/NavBar.css';
 import lupa from '../img/lupa.png';
 import logo from '../img/logo.png';
 import carritoCom from '../img/carrito.png';
-import FormularioPedido from './FormularioPedido.js'; // Importamos el nuevo componente
+import FormularioPedido from './FormularioPedido.js';
 
 const NavBar = ({ carrito, setCarrito }) => {
   const [carritoAbierto, setCarritoAbierto] = useState(false);
@@ -24,11 +24,11 @@ const NavBar = ({ carrito, setCarrito }) => {
   };
 
   const manejarConfirmacion = () => {
-    setMostrarFormulario(true); // Mostrar el formulario cuando se confirma el carrito
+    setMostrarFormulario(true);
   };
 
   const cerrarFormulario = () => {
-    setMostrarFormulario(false); // Cerrar el formulario
+    setMostrarFormulario(false);
   };
 
   return (
@@ -84,7 +84,13 @@ const NavBar = ({ carrito, setCarrito }) => {
         </div>
       )}
 
-      {mostrarFormulario && <FormularioPedido cerrarFormulario={cerrarFormulario} />} {/* Invocar al formulario */}
+      {mostrarFormulario && (
+        <FormularioPedido 
+          cerrarFormulario={cerrarFormulario} 
+          carrito={carrito} 
+          total={calcularTotal()} 
+        />
+      )}
     </header>
   );
 };
