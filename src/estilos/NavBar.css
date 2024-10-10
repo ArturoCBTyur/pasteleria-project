@@ -91,3 +91,74 @@
   width: auto;
   cursor: pointer;
 }
+
+
+.carrito-desplegable {
+  position: absolute;
+  margin-top: 20px;
+  top: 50px;
+  right: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 160px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1100;
+}
+
+
+.carrito-desplegable {
+  position: fixed;
+  background-color: #f2f2f2; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  padding: 10px;
+  width: 425px; 
+  z-index: 1000;
+}
+
+.carrito-desplegable ul {
+  list-style-type: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.carrito-desplegable li {
+  margin: 5px 0; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.botones-carrito {
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 10px; 
+}
+
+.confirmar-btn {
+  background-color: #4CAF50; 
+  color: white; 
+  border: none; 
+  height: 40px;
+  padding: 10px 15px; 
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+.confirmar-btn:hover {
+  background-color: #45a049; 
+}
+
+button {
+  background-color: #f44336; 
+  color: white; 
+  border: none; 
+  padding: 5px 10px; 
+  border-radius: 3px;
+  cursor: pointer; 
+}
+
+button:hover {
+  background-color: #d32f2f; 
+}
