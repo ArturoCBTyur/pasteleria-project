@@ -1,0 +1,61 @@
+/* src/componentes/FormularioPedido.css */
+.formulario-pedido-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .formulario-pedido {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .formulario-pedido h2 {
+    margin-bottom: 15px;
+  }
+  
+  .formulario-pedido form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formulario-pedido label {
+    margin: 10px 0 5px;
+  }
+  
+  .formulario-pedido input,
+  .formulario-pedido select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .formulario-pedido button {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .formulario-pedido button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .formulario-pedido button[type="button"] {
+    background-color: #dc3545;
+    color: white;
+  }
+  
