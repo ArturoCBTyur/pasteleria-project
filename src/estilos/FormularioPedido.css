@@ -42,6 +42,12 @@
     border-radius: 4px;
   }
   
+  .metodo-entrega {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+  }
+  
   .formulario-pedido button {
     padding: 10px;
     margin-right: 10px;
@@ -58,4 +64,3 @@
     background-color: #dc3545;
     color: white;
   }
-  
