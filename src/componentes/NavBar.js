@@ -1,11 +1,14 @@
+// src/componentes/NavBar.js
 import React, { useState } from "react";
 import '../estilos/NavBar.css';
 import lupa from '../img/lupa.png';
 import logo from '../img/logo.png';
 import carritoCom from '../img/carrito.png';
+import FormularioPedido from './FormularioPedido.js';
 
 const NavBar = ({ carrito, setCarrito }) => {
   const [carritoAbierto, setCarritoAbierto] = useState(false);
+  const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
   const manejarClickCarrito = () => {
     setCarritoAbierto(!carritoAbierto);
@@ -18,6 +21,14 @@ const NavBar = ({ carrito, setCarrito }) => {
 
   const calcularTotal = () => {
     return carrito.reduce((total, item) => total + (item.price * item.cantidad), 0);
+  };
+
+  const manejarConfirmacion = () => {
+    setMostrarFormulario(true);
+  };
+
+  const cerrarFormulario = () => {
+    setMostrarFormulario(false);
   };
 
   return (
@@ -59,18 +70,26 @@ const NavBar = ({ carrito, setCarrito }) => {
               <ul>
                 {carrito.map((item, index) => (
                   <li key={index}>
-                    {item.title} - Cantidad: {item.cantidad} - Precio: S/.{item.price * item.cantidad} 
+                    {item.title} - Cantidad: {item.cantidad} - Precio: S/.{item.price * item.cantidad}
                     <button onClick={() => quitarProducto(item.title)}>Quitar</button>
                   </li>
                 ))}
               </ul>
               <div className="botones-carrito">
-                <p><strong>Total: S/.{calcularTotal()}</strong></p> 
-                <button className="confirmar-btn">Confirmar</button>
+                <p><strong>Total: S/.{calcularTotal()}</strong></p>
+                <button className="confirmar-btn" onClick={manejarConfirmacion}>Confirmar</button>
               </div>
             </div>
           )}
         </div>
+      )}
+
+      {mostrarFormulario && (
+        <FormularioPedido 
+          cerrarFormulario={cerrarFormulario} 
+          carrito={carrito} 
+          total={calcularTotal()} 
+        />
       )}
     </header>
   );
