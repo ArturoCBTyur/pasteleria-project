@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import '../estilos/FormularioPedido.css';
 import jsPDF from "jspdf";
+import QRCode from "qrcode";
 
 const FormularioPedido = ({ cerrarFormulario, carrito, total }) => {
   const [metodoEntrega, setMetodoEntrega] = useState("recoger");
@@ -17,7 +18,7 @@ const FormularioPedido = ({ cerrarFormulario, carrito, total }) => {
     return Math.floor(100000 + Math.random() * 900000); // Código aleatorio de 6 dígitos
   };
 
-  const generarPDF = (e) => {
+  const generarPDF = async (e) => {
     e.preventDefault();
 
     // Crear un nuevo documento PDF
@@ -25,6 +26,9 @@ const FormularioPedido = ({ cerrarFormulario, carrito, total }) => {
 
     // Código de pedido
     const codigoPedido = generarCodigoPedido();
+
+    // Generar el código QR
+    const qrCodeUrl = await QRCode.toDataURL(codigoPedido.toString());
 
     // Añadir contenido al PDF
     doc.setFontSize(16);
@@ -44,6 +48,9 @@ const FormularioPedido = ({ cerrarFormulario, carrito, total }) => {
 
     // Precio total del pedido
     doc.text(`Precio Total del Pedido: S/.${total}`, 20, 100 + (carrito.length * 10));
+
+    // Añadir el código QR al PDF
+    doc.addImage(qrCodeUrl, 'PNG', 150, 20, 40, 40); // Posición y tamaño del QR
 
     // Descargar el archivo PDF
     doc.save(`pedido_${codigoPedido}.pdf`);
