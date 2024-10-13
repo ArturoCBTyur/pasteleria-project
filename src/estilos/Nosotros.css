@@ -1,0 +1,86 @@
+.nosotros-container {
+  margin-top: 150px;
+  margin-bottom: 80px;
+  background-color: #f9f1f1;
+  padding: 40px 40px 40px 40px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nosotros-container h1 {
+  font-size: 40px;
+  text-align: center;
+  color: #181717;
+  margin-bottom: 25px;
+}
+
+.descripcion {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+}
+
+.imagen-pastelero {
+  width: 350px;
+  border-radius: 8px;
+  margin-left: 25px;
+  float: right;
+}
+
+.equipo {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.equipo h3 {
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.miembros {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.miembro {
+  text-align: center;
+}
+
+.miembro img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+.chef-section {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.chef-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.chef-section p {
+  font-size: 20px;
+  width: 85%;
+}
+
+.nosotros-container p.bienvenida {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}

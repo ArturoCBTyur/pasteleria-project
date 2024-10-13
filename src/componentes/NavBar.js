@@ -1,10 +1,11 @@
 // src/componentes/NavBar.js
 import React, { useState } from "react";
-import '../estilos/NavBar.css';
-import lupa from '../img/lupa.png';
-import logo from '../img/logo.png';
-import carritoCom from '../img/carrito.png';
-import FormularioPedido from './FormularioPedido.js';
+import "../estilos/NavBar.css";
+import lupa from "../img/lupa.png";
+import logo from "../img/logo.png";
+import carritoCom from "../img/carrito.png";
+import FormularioPedido from "./FormularioPedido.js";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ carrito, setCarrito }) => {
   const [carritoAbierto, setCarritoAbierto] = useState(false);
@@ -15,12 +16,15 @@ const NavBar = ({ carrito, setCarrito }) => {
   };
 
   const quitarProducto = (titulo) => {
-    const nuevoCarrito = carrito.filter(item => item.title !== titulo);
+    const nuevoCarrito = carrito.filter((item) => item.title !== titulo);
     setCarrito(nuevoCarrito);
   };
 
   const calcularTotal = () => {
-    return carrito.reduce((total, item) => total + (item.price * item.cantidad), 0);
+    return carrito.reduce(
+      (total, item) => total + item.price * item.cantidad,
+      0
+    );
   };
 
   const manejarConfirmacion = () => {
@@ -46,13 +50,13 @@ const NavBar = ({ carrito, setCarrito }) => {
         <div className="menu-opciones">
           <ul>
             <li>
-              <a href="#">Inicio</a>
+              <Link to="/">Inicio</Link>
             </li>
             <li>
-              <a href="#">Nosotros</a>
+              <Link to="/nosotros">Nosotros</Link>
             </li>
             <li>
-              <a href="#">Tortas</a>
+              <Link to="/contac">Contáctanos</Link>
             </li>
           </ul>
           <div className="carrito" onClick={manejarClickCarrito}>
@@ -70,14 +74,21 @@ const NavBar = ({ carrito, setCarrito }) => {
               <ul>
                 {carrito.map((item, index) => (
                   <li key={index}>
-                    {item.title} - Cantidad: {item.cantidad} - Precio: S/.{item.price * item.cantidad}
-                    <button onClick={() => quitarProducto(item.title)}>Quitar</button>
+                    {item.title} - Cantidad: {item.cantidad} - Precio: S/.
+                    {item.price * item.cantidad}
+                    <button onClick={() => quitarProducto(item.title)}>
+                      Quitar
+                    </button>
                   </li>
                 ))}
               </ul>
               <div className="botones-carrito">
-                <p><strong>Total: S/.{calcularTotal()}</strong></p>
-                <button className="confirmar-btn" onClick={manejarConfirmacion}>Confirmar</button>
+                <p>
+                  <strong>Total: S/.{calcularTotal()}</strong>
+                </p>
+                <button className="confirmar-btn" onClick={manejarConfirmacion}>
+                  Confirmar
+                </button>
               </div>
             </div>
           )}
@@ -85,10 +96,10 @@ const NavBar = ({ carrito, setCarrito }) => {
       )}
 
       {mostrarFormulario && (
-        <FormularioPedido 
-          cerrarFormulario={cerrarFormulario} 
-          carrito={carrito} 
-          total={calcularTotal()} 
+        <FormularioPedido
+          cerrarFormulario={cerrarFormulario}
+          carrito={carrito}
+          total={calcularTotal()}
         />
       )}
     </header>
