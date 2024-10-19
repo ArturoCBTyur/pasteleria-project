@@ -1,11 +1,11 @@
 // src/componentes/NavBar.js
 import React, { useState } from "react";
 import "../estilos/NavBar.css";
-import lupa from "../img/lupa.png";
 import logo from "../img/logo.png";
 import carritoCom from "../img/carrito.png";
 import FormularioPedido from "./FormularioPedido.js";
 import { Link } from "react-router-dom";
+
 
 const NavBar = ({ carrito, setCarrito }) => {
   const [carritoAbierto, setCarritoAbierto] = useState(false);
@@ -41,11 +41,8 @@ const NavBar = ({ carrito, setCarrito }) => {
         <div className="logo-small">
           <img src={logo} alt="Logo pequeño" />
         </div>
-        <div className="buscador">
-          <input type="text" id="search" placeholder="Buscar Productos..." />
-          <button id="searchButton">
-            <img src={lupa} alt="Buscar" />
-          </button>
+        <div className="sweet">
+          <h1>Sweet Inspiration</h1>
         </div>
         <div className="menu-opciones">
           <ul>
