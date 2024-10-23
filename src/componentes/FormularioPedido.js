@@ -192,7 +192,11 @@ const FormularioPedido = ({ cerrarFormulario, carrito, total, limpiarCarrito }) 
           {metodoEntrega === "domicilio" && (
             <>
               <label>Dirección:</label>
-              <input type="text" placeholder="Dirección" required />
+              <input            
+            type="text" 
+            placeholder="Direccion"  
+            value={direccion} 
+            onChange={(e) => setDireccion(e.target.value)} />
             </>
           )}
 
