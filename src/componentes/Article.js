@@ -45,6 +45,7 @@ function TortaCard({ torta, agregarAlCarrito }) {
     const agregarProducto = () => {
         if (cantidad > 0) {
             agregarAlCarrito(torta, cantidad);
+            setCantidad(0);
         } else {
             agregarAlCarrito(torta, 0);
         }

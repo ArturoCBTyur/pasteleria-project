@@ -35,6 +35,10 @@ const NavBar = ({ carrito, setCarrito }) => {
     setMostrarFormulario(false);
   };
 
+  const limpiarCarrito = () => {
+    setCarrito([]); 
+  };
+
   return (
     <header>
       <div className="barra-navegacion">
@@ -97,6 +101,7 @@ const NavBar = ({ carrito, setCarrito }) => {
           cerrarFormulario={cerrarFormulario}
           carrito={carrito}
           total={calcularTotal()}
+          limpiarCarrito={limpiarCarrito}
         />
       )}
     </header>

@@ -4,7 +4,7 @@ import jsPDF from "jspdf";
 import QRCode from "qrcode";
 import logoImg from '../img/logo.png';
 
-const FormularioPedido = ({ cerrarFormulario, carrito, total }) => {
+const FormularioPedido = ({ cerrarFormulario, carrito, total, limpiarCarrito }) => {
   const [metodoEntrega, setMetodoEntrega] = useState("recoger");
   const [nombre, setNombre] = useState('');
   const [telefono, setTelefono] = useState('');
@@ -139,6 +139,9 @@ const FormularioPedido = ({ cerrarFormulario, carrito, total }) => {
     // Descargar el PDF
     doc.save(`Sweet_Inspiration_Pedido_${codigoPedido}.pdf`);
 
+    setTimeout(() => {
+      limpiarCarrito();
+    }, 1000);
     cerrarFormulario();
   };
   return (
